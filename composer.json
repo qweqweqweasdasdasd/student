@@ -20,7 +20,9 @@
     "autoload": {
         "classmap": [
             "database",
-            "app/Tools/Cart.php"
+            "app/Tools/Cart.php",
+            "app/Lib/Sms/SendTemplateSMS.php",
+            "app/Lib/Sms/CCPRestSmsSDK.php"
         ],
         "psr-4": {
             "App\\": "app/"

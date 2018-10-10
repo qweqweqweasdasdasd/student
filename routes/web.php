@@ -64,6 +64,8 @@ Route::group(['middleware'=>'auth:admin'],function(){
 	});
 });
 
+//调用荣联运短信接口
+Route::post('/server/sendsms','Servers\ServerController@sendsms');
 
 //首页
 Route::get('/{profession?}','Home\IndexController@index');

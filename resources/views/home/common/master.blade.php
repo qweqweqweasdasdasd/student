@@ -11,7 +11,7 @@
     <title>@yield('title')</title>
     <link rel="stylesheet" href="/home/plugins/normalize-css/normalize.css" />
     <link rel="stylesheet" href="/home/plugins/bootstrap/dist/css/bootstrap.css" />
-    <link rel="stylesheet" href="/home/css/page-learing-sign.css" />
+    <!-- <link rel="stylesheet" href="/home/css/page-learing-sign.css" /> -->
     @yield('my-css')
 </head>
 <body>

@@ -1,5 +1,8 @@
 @extends('home/common/master')
 @section('title','登录')
+@section('my-css')
+<link rel="stylesheet" href="/home/css/page-learing-sign.css" />
+@endsection
 @section('content')
 <!-- 页面 -->
 <div class="register">

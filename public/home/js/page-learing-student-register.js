@@ -18,6 +18,7 @@ $('.send').click(function(){
     var time;
     var num = 60;
     if($(this).text() == "发送验证码"){
+       	sendSMS();	//调用接口
         time = setInterval(function(){
             $('.send').removeClass('btn-default').addClass('btn-success');
             num--;
