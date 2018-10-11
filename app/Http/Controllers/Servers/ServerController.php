@@ -2,9 +2,13 @@
 
 namespace App\Http\Controllers\Servers;
 
+use App\Student;
+use App\Jobs\SendEail;
+use App\Jobs\insertStudent;
 use Illuminate\Http\Request;
 use App\Lib\Sms\RongLianYun;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Redis;
 use App\Http\Requests\CheckphoneRequest;
 
@@ -36,6 +40,20 @@ class ServerController extends Controller
 
 	        return ['code'=>config('code.success'),'error'=>'发送成功'];
          }
-    	
+    }
+
+    //邮箱发送
+    public function sendMailToUsers()
+    {
+    	$students = Student::get();
+    	foreach ($students as $key => $student) {
+    		dispatch(new SendEail($student));
+    	}
+    }
+
+    //模拟插入数据
+    public function sendToSend()
+    {
+        $this->dispatch(new insertStudent());
     }
 }

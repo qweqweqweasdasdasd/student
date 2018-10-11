@@ -64,8 +64,17 @@ Route::group(['middleware'=>'auth:admin'],function(){
 	});
 });
 
+
 //调用荣联运短信接口
 Route::post('/server/sendsms','Servers\ServerController@sendsms');
+//调用qq邮箱批量给所有的用户发送邮箱 --- 列队的方式发送
+Route::get('/mail/sends','Servers\ServerController@sendMailToUsers');
+//调用qq邮箱发送
+Route::get('/mail/send','Servers\ServerController@sendMail');
+//日志的形式发送队列
+Route::get('/log/sendToSend','Servers\ServerController@sendToSend');
+
+
 
 //首页
 Route::get('/{profession?}','Home\IndexController@index');
